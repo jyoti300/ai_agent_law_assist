@@ -4,7 +4,9 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from ai_agent.law_agent import law_agent
 from .utils import is_booking_intent
-from django.http import HttpResponse
+
+from django.http import HttpResponseRedirect
+
 
 
 def ai_law_assist(request):
@@ -21,3 +23,11 @@ def ai_law_assist(request):
 
 def qr_view(request):
     return HttpResponse("QR page is working ✅")
+
+
+def whatsapp_redirect(request):
+    whatsapp_number = "919876543210"  # YOUR BUSINESS NUMBER
+    message = "Book Appointment"
+
+    url = f"https://wa.me/{whatsapp_number}?text={message.replace(' ', '%20')}"
+    return HttpResponseRedirect(url)

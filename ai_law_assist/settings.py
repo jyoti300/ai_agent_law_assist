@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-rbcm4f2z*#4+r&$^v=ld$jm@a=^4_m@4(m$h##s4)*g0q)@lv2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ["ai-agent-law-assist.onrender.com", "127.0.0.1", "localhost"]
+
 
 
 # Application definition
@@ -117,3 +119,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+import os
+from decouple import config
+
+SECRET_KEY = config('DJANGO_SECRET_KEY', default='dev-secret-key')
+DEBUG = config('DEBUG', default=True, cast=bool)

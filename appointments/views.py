@@ -26,7 +26,7 @@ def qr_view(request):
 
 
 def whatsapp_redirect(request):
-    whatsapp_number = "919876543210"  # YOUR BUSINESS NUMBER
+    whatsapp_number = "8591403229"  # YOUR BUSINESS NUMBER
     message = "Book Appointment"
 
     url = f"https://wa.me/{whatsapp_number}?text={message.replace(' ', '%20')}"

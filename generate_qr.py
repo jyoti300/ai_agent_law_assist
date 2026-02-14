@@ -1,9 +1,12 @@
 import qrcode
 
 # Replace with YOUR BUSINESS WhatsApp number
-whatsapp_link = "https://wa.me/919876543210?text=Book%20Appointment"
+#whatsapp_link = "https://wa.me/8591403229?text=Book%20Appointment"
 
-img = qrcode.make(whatsapp_link)
-img.save("ai_law_assist_qr.png")
+#img = qrcode.make(whatsapp_link)
 
-print("QR code generated successfully")
+
+img = qrcode.make("https://ai-agent-law-assist.onrender.com/book/")
+img.save("ai_law_assist_live_qr.png")
+
+print("Live QR generated successfully")
